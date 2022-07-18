@@ -7,13 +7,16 @@ button.addEventListener("click", () => {
 });
 
 const fizzBuzz = (number) => {
+  let isFizz = number % 3 === 0;
+  let isBuzz = number % 5 === 0;
+
   if (typeof number !== "number") {
     return (answer.innerHTML = "Por favor, digite um número");
-  } else if (number % 3 === 0 && number % 5 === 0) {
+  } else if (isFizz && isBuzz) {
     return (answer.innerHTML = "FizzBuzz");
-  } else if (number % 3 === 0) {
+  } else if (isFizz) {
     return (answer.innerHTML = "Fizz");
-  } else if (number % 5 === 0) {
+  } else if (isBuzz) {
     return (answer.innerHTML = "Buzz");
   } else {
     return (answer.innerHTML = number);
